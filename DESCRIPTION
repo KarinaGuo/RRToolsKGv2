@@ -1,0 +1,13 @@
+Package: RRtools
+Title: Filtering, Conversion, Analysis of SNP genotype data
+Version: 0.1
+Authors@R: person("Jason", "Bragg", email = "jasongbragg@gmail.com", role = c("aut", "cre"))
+Description: This package opens a file containing DArT SNP genotype data. It
+    performs some filtering based on user-supplied criteria, and converts the data
+    to input files for various population genetic inference packages.
+Depends:
+    R (>= 3.3.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
