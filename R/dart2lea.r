@@ -34,6 +34,14 @@ dart2lea <- function(dart_data, basedir, species, dataset, meta_data=FALSE) {
 
    treatment <- dart_data$treatment 
 
+   dir <- paste(basedir, "/popgen",sep="")
+   if(!dir.exists(dir)) {
+      cat("  Directory: ", dir, " does not exist and is being created. \n")
+      dir.create(dir)
+   } else {
+      cat("  Directory: ", dir, " already exists... content might be overwritten. \n")
+   }
+   
    dir <- paste(basedir, species, "/popgen",sep="")
    if(!dir.exists(dir)) {
       cat("  Directory: ", dir, " does not exist and is being created. \n")
