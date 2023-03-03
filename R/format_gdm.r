@@ -26,7 +26,7 @@ format_gdm <- function(gdm_dir, Q=FALSE) {
    id_gdissim      <- cbind(environ$sites, gdissim)
    colnames(id_gdissim)[1] <- "sites"
 
-   gdm_spt <- formatsitepair(bioData=id_gdissim, bioFormat=3, predData=environ, siteColumn="sites", XColumn="long", YColumn="lat")
+   gdm_spt <- gdm::formatsitepair(bioData=id_gdissim, bioFormat=3, predData=environ, siteColumn="sites", XColumn="long", YColumn="lat")
 
    gdm_in <- list(gdissim=gdissim, environ=environ, gdm_spt=gdm_spt)
 
