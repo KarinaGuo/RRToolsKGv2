@@ -31,7 +31,7 @@ krigcomps_SNMF_gdm <- function(gdm_dir, pixels_per_degree=20, buff=0.5, krig_lam
    gridlist <- list(seq( sr@extent@xmin, sr@extent@xmax, length=sr@ncols) , seq( sr@extent@ymin, sr@extent@ymax, length=sr@nrows))
    sgrid     <- make.surface.grid(gridlist)
 
-   results <- read.table( paste(gdm_dir,"/environ_Q_data.txt", sep=""), header=TRUE, sep=" " )
+   results <- read.csv( paste(gdm_dir,"/environ_Q_data.txt", sep=""), header=TRUE, sep=" " )
    Qind    <- which(substr(colnames(results),1,6)=="Qprops")
 
    if (length(Qind) >= 1) {
