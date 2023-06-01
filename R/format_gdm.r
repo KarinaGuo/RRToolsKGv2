@@ -20,8 +20,8 @@ format_gdm <- function(gdm_dir, Q=FALSE) {
 
    if (Q == TRUE)  { environ_file    <- paste(gdm_dir, "/environ_Q_data.txt", sep="") }
 
-   gdissim         <- read.table(gdissim_file, header=FALSE, sep=" ") 
-   environ         <- read.table(environ_file, header=TRUE, sep=" ")
+   gdissim         <- read.csv(gdissim_file, header=FALSE, sep=" ") 
+   environ         <- read.csv(environ_file, header=TRUE, sep=" ")
 
    id_gdissim      <- cbind(environ$sites, gdissim)
    colnames(id_gdissim)[1] <- "sites"
