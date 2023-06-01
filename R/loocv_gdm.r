@@ -32,8 +32,8 @@ loocv_gdm <- function(gdm_dir, krig_lambda=NULL, Q=FALSE) {
 
    # read in data
 
-   master_fst <- read.table(master_fst_file, header=FALSE, sep=" ")
-   master_env <- read.table(master_env_file, header=TRUE, sep=" ")
+   master_fst <- read.csv(master_fst_file, header=FALSE, sep=" ")
+   master_env <- read.csv(master_env_file, header=TRUE, sep=" ")
 
    if (Q)  { 
       master_env    <- paste(gdm_dir, "/environ_Q_data.txt", sep="") 
