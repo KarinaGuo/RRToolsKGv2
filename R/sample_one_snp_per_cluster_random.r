@@ -32,7 +32,7 @@ sample_one_snp_per_cluster_random <- function(dart_data, cluster_fil, seed=12345
       cat(" genotypes, lous names read \n")
    }
 
-   clusters <- read.table(cluster_fil, header=FALSE, sep=",")
+   clusters <- read.csv(cluster_fil, header=FALSE, sep=",")
    colnames(clusters) <- c("snp", "clust")
    i_snp_clust <- match(  locus_names,  clusters$snp )
 
