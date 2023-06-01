@@ -29,7 +29,7 @@ clip_raster_to_points <- function(raster_to_clip, location_file=NULL, gdm_dir=NU
        
    }
 
-   location_info   <- read.table(location_file, header=TRUE, sep=" ")
+   location_info   <- read.csv(location_file, header=TRUE, sep=" ")
 
    ld_hull         <- inla.nonconvex.hull(as.matrix(cbind(location_info$long, location_info$lat)), resolution = hull_res, convex = convexity)
    ld_poly         <- SpatialPolygons(list(Polygons(list(Polygon(ld_hull$loc)), ID=1)))
