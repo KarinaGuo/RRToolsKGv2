@@ -31,7 +31,7 @@ get_climate_data <- function(varfile, climdir, longlatpoints) {
 
    long_lat       <- longlatpoints
 
-   clim_tifs      <- read.table(varfile, header=TRUE)$file
+   clim_tifs      <- read.csv(varfile, header=TRUE)$file
    colnames(long_lat) <- c("long", "lat") 
    clim_tifs_path <- paste(climdir, clim_tifs,sep="/")
 
