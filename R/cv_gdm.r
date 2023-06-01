@@ -42,8 +42,8 @@ cv_gdm <- function(gdm_dir, geo=TRUE, Q=FALSE, krig_lambda=NULL, E=FALSE, erast=
    }
 
    # read in data
-   master_fst <- read.table(master_fst_file, header=FALSE, sep=" ")
-   master_env <- read.table(master_env_file, header=TRUE, sep=" ")
+   master_fst <- read.csv(master_fst_file, header=FALSE, sep=" ")
+   master_env <- read.csv(master_env_file, header=TRUE, sep=" ")
 
    npop <- nrow(master_env)
 
