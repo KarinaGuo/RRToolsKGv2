@@ -24,7 +24,7 @@ make_srast <- function(gdm_dir, pixels_per_degree=20, buff=0.5, return_rast=TRUE
    if (Q) {
       location_file   <- paste(gdm_dir, "/environ_Q_data.txt",sep="")
    }
-   location_info   <- read.table(location_file, header=TRUE, sep=" ")
+   location_info   <- read.csv(location_file, header=TRUE, sep=" ")
    lat_long        <- as.matrix(cbind(location_info$long, location_info$lat))
    
    minlon <- min(lat_long[, 1])
