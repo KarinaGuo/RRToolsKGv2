@@ -41,8 +41,8 @@ SNMF2gdm <- function(basedir, species, dataset, treatment, process=FALSE, pop=NU
       cat(   "   Cannot find gdm environmental variable file. Exiting. \n"); stop() 
    }
 
-   environ  <- read.table(gdm_E_file, header=TRUE, sep=" ") 
-   ancestr  <- read.table(pop_Q_file, header=TRUE, sep=" ") 
+   environ  <- read.csv(gdm_E_file, header=TRUE, sep=" ") 
+   ancestr  <- read.csv(pop_Q_file, header=TRUE, sep=" ") 
 
    index    <- 1:nrow(environ) 
    environ  <- cbind(environ, index)
