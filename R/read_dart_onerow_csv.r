@@ -26,7 +26,7 @@ read_dart_onerow_csv <- function(basedir,species,dataset, misschar="-", altcount
    cat(" Reading data file:", datafile,"\n")
 
    ### Open and parse dart datafile
-   #x <- read.table(datafile,sep=",",na="-", stringsAsFactors=FALSE)
+   #x <- read.csv(datafile,sep=",",na="-", stringsAsFactors=FALSE)
    x <- read.delim(datafile,sep=",",na="-", stringsAsFactors=FALSE, header=FALSE)
      
    rows_before_gt <- max(which(x[,1]=="*"))
