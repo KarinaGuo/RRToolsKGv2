@@ -36,7 +36,7 @@ query.RR.data.base <- function(dart_data, basedir, species, dataset, RR_db_file,
    }
 
    if (writing) {
-      all_tissues <- read.table(RR_db_file, header=TRUE, sep=",")
+      all_tissues <- read.csv(RR_db_file, header=TRUE, sep=",")
 
       i_all_tissues <- match(row.names(dart_data$gt), all_tissues$NSWnumber)
       if( length(  which(is.na(i_all_tissues)) ) > 0 ) {
