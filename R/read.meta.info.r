@@ -22,7 +22,7 @@ read.meta.info <- function(dart_data, basedir, species, dataset, version="db", f
    }
 
    ### Open and parse meta data 
-   m  <- read.table(metafile, header=TRUE, sep=",")
+   m  <- read.csv(metafile, header=TRUE, sep=",")
 
    if ( any( names(m) == "sample" ) & any(names(m) == "lat") & any(names(m) == "long") ) {
       cat(" Found sample, lat and long columns in metadata \n")
