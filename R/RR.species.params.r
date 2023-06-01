@@ -17,7 +17,7 @@ RR.species.params <- function(paramdir, species_file, target_species="all") {
    cat("\n")
    cat(" Opening the list of species and parameters:", file,"\n")
 
-   species_info <- read.table(file, sep="\t", header=TRUE)
+   species_info <- read.csv(file, sep="\t", header=TRUE)
 
 
    if (target_species == "all") {
