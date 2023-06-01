@@ -18,7 +18,7 @@ exclude.samples <- function(dart_data, by="file", excluded_sample_file="None", e
    if ( by == "file" | by == "names" ) {
 
       if (by == "file") {
-         samples_to_exclude <- as.matrix(read.table(excluded_sample_file, header=FALSE))
+         samples_to_exclude <- as.matrix(read.csv(excluded_sample_file, header=FALSE))
       } 
  
       if (by == "names") {
