@@ -28,7 +28,7 @@ make_prediction_domain_file <- function(species, out_dir, location_file=NULL, gd
        
    }
 
-   location_info   <- read.table(location_file, header=TRUE, sep=" ")
+   location_info   <- read.csv(location_file, header=TRUE, sep=" ")
 
    ld_hull         <- inla.nonconvex.hull(as.matrix(cbind(location_info$long, location_info$lat)), resolution = hull_res, convex = convexity)
    ld_poly         <- SpatialPolygons(list(Polygons(list(Polygon(ld_hull$loc)), ID=1)))
