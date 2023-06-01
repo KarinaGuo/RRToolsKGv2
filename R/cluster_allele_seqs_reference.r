@@ -48,8 +48,8 @@ cluster_allele_seqs_reference <- function(basedir, species, dataset, cutoff, cdb
    cat("   Clusting complete... Matching to locus list file... \n")
    locus_list <- paste(fa_dir,"/",species,"_",dataset,"_locus_list.csv",sep="")
 
-   lt <- read.table(locus_list, header=FALSE, sep=",")
-   tc <- read.table(cluster_tnam, header=FALSE, sep=",")
+   lt <- read.csv(locus_list, header=FALSE, sep=",")
+   tc <- read.csv(cluster_tnam, header=FALSE, sep=",")
 
    i_lt_tc <- match(lt[,2], tc[,1])
 
