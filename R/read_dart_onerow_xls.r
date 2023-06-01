@@ -26,7 +26,7 @@ read_dart_onerow_xls <- function(basedir,species,dataset, misschar="-", altcount
    cat(" Reading data file:", datafile,"\n")
 
    ### Open and parse dart datafile
-   x <- read.table(datafile,sep=",",na="-", stringsAsFactors=FALSE)
+   x <- read.csv(datafile,sep=",",na="-", stringsAsFactors=FALSE)
    #x <- read_excel(datafile, sheet=4,  skip=topskip, col_names=TRUE, na=nas)
 
    
