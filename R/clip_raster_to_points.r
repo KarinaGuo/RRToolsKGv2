@@ -14,7 +14,7 @@
 #' new_raster <- clip_raster_to_points(old_raster, location_file="locations.txt")
 #' }
 
-clip_raster_to_points <- function(raster_to_clip, location_file=NULL, gdm_dir=NULL, hull_res=150, convexity=0.85) {
+clip_raster_to_points <- function(raster_to_clip, location_file=NULL, gdm_dir=NULL, hull_res=150, convexity=0.85, width_size=0.1) {
 
 
    require(fields); require(sp); require(raster); require(INLA); require(rgeos)
@@ -33,7 +33,7 @@ clip_raster_to_points <- function(raster_to_clip, location_file=NULL, gdm_dir=NU
 
    ld_hull         <- inla.nonconvex.hull(as.matrix(cbind(location_info$long, location_info$lat)), resolution = hull_res, convex = convexity)
    ld_poly         <- SpatialPolygons(list(Polygons(list(Polygon(ld_hull$loc)), ID=1)))
-   ld_poly_buff    <- gBuffer(ld_poly,width=.1)
+   ld_poly_buff    <- gBuffer(ld_poly,width=width_size)
 
    clipped_raster <- mask(raster_to_clip, ld_poly_buff) 
 
