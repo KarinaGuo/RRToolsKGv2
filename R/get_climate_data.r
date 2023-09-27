@@ -36,9 +36,9 @@ get_climate_data <- function(varfile, climdir, longlatpoints) {
    clim_tifs_path <- paste(climdir, clim_tifs,sep="/")
 
    # open the climate layers in a stack, using raster
-   s <- stack(clim_tifs_path)
+   s <- raster::stack(clim_tifs_path)
    
-   clim <- extract(s,long_lat)
+   clim <- raster::extract(s,long_lat)
 
    return(clim)
 }
